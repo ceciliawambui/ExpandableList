@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Basic styling for the list */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Styling for the list item titles */
+        li {
+            background-color: lightgray;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Styling for the hidden sub-list */
+        .hidden {
+            display: none;
+        }
+    </style>
+    <title>Expandable List</title>
+</head>
+<body>
+    <ul id="parent-list">
+        <li>
+            Fruits
+            <ul class="hidden">
+                <li>Mango</li>
+                <li>Apples</li>
+            </ul>
+        </li>
+        <li>
+            Vegetables
+            <ul class="hidden">
+                <li>Lettuce</li>
+                <li>cabbage</li>
+            </ul>
+        </li>
+        <li>
+            Energy Drinks
+            <ul class="hidden">
+                <li>Red Bull</li>
+                <li>Monster</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        
+        const parentList = document.getElementById('parent-list');
+
+    
+        parentList.addEventListener('click', function(event) {
+            
+            if (event.target.tagName === 'LI') {
+                
+                event.target.querySelector('ul').classList.toggle('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

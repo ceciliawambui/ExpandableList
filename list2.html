@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable list</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+        #ul1 {
+            display: none;
+            font-family: Aveden;
+        }
+
+        #ul2 {
+            display: none;
+            font-family: Aveden;
+        }
+
+        #ul3 {
+            display: none;
+            font-family: Aveden;
+        }
+
+        #meat {
+            font-family: Aveden;
+            cursor: pointer;
+        }
+
+        #veg {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #fruit {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            cursor: pointer;
+        }
+
+        .myDisplay {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+
+        <li>
+            <h2 id="veg" class="Title">Vegetables</h2>
+        </li>
+        <div id="ul1">
+            <li>Carrots</li>
+            <li>Onions</li>
+            <li>Cucumbers</li>
+        </div>
+
+        <li>
+            <h2 id="fruit" class="Title">Fruits</h2>
+        </li>
+        <div id="ul2">
+            <li>Apples</li>
+            <li>Bananas</li>
+            <li>Pears</li>
+        </div>
+
+        <li>
+            <h2 id="meat" class="Title">Meats</h2>
+        </li>
+        <div id="ul3">
+            <li>Fish</li>
+            <li>Beef</li>
+            <li>Chicken</li>
+        </div>
+
+    </ul>
+
+    <script>
+        const h2Elements = document.querySelectorAll("h2");
+        const divElements = document.querySelectorAll("div");
+
+        h2Elements.forEach((h2, index) => {
+            h2.addEventListener("click", () => {
+                divElements[index].style.display = divElements[index].style.display === "none" ? "block" : "none";
+            })
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
